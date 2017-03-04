@@ -50,6 +50,8 @@ dialog window, and content.
   min-width: 300px;
   max-width: 500px;
   height: auto;
+  min-height: 400px;
+  border-radius: 20px;  
   /*
   Drop Shadow
   a. Horizontal shadow
@@ -78,10 +80,8 @@ dialog window, and content.
   height: auto;
   background-color: #FFFFFF;
   /* Corner radius */
-  border-top-left-radius:2px;
-  border-top-right-radius:2px;
-  border-bottom-right-radius:0;
-  border-bottom-left-radius:0;    
+ 
+  border-radius: 20px;  
   /* Internal padding */
   padding-top: 5px;
   padding-left: 2px;

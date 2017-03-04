@@ -7,34 +7,26 @@ p{
 	color: #3f3f3f;
 }
 
+
 #date{
 	position: relative;
 	top:70px;
 	width: 25%;
+	max-width: 150px;
 }
 
 #balloon{
 	width: 40%;
+	max-width: 200px;
+	
 }
 
 #copy{
 	position: relative;
 	top:85px;
+	
 }
 
-#btnGirl{
-	position: relative;
-	right:20px;
-	top:70px;
-	width: 20%;
-}
-
-#btnBoy{
-	position: relative;
-	top:70px;
-	left: 20px;
-	width: 20%;
-}
 
 #girlLogo{
 	width: 55px;
@@ -57,6 +49,22 @@ p{
 #jello1{
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 800px;
+	margin-top: 20px;
+	max-width: 600px;
+	background-color: white;
+	padding: 10px;
+	perspective: 10px;
+	-webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  cursor: pointer;
+	border-radius: 20px;
 
 }
+
+

@@ -4,16 +4,21 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>男生页面</title>
-		<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 
 		<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-		<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../css/font-awesome.css" />
+		<link rel="stylesheet" href="../css/font-awesome.min.css" />
+		<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="../css/style.css" />
 		<link rel="stylesheet" href="../css/boystyle.css">
+		<link rel="stylesheet" href="../css/font-awesome.css" />
+		<link rel="stylesheet" href="../css/font-awesome.min.css" />
+		<link rel="stylesheet" href="http://www.bootcss.com/p/buttons/css/buttons.css" />
 	</head>
 
 	<body>
+		
 
 		<div class="container">
 			<div class="card">
@@ -29,18 +34,8 @@
 
 		<script src="../js/boyindex.js"></script>
 
-		<div class="outer" align="center">
-			<div class="form-group">
-				<div>
-					<a class="btn btn-default" href="../index.html" role="button">Return</a>
-					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#mymodal-data">Choose</button>
-					<button type="button" class="btn btn-default">Next</button>
 
-				</div>
-			</div>
-		</div>
-
-		<div class="modal" id="mymodal-data" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div align="center" class="modal" id="mymodal-data" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -59,6 +54,20 @@
 			</div>
 		</div>
 
+		<div class="outer" align="center">
+			<div class="form-group">
+				<div>
+					<button  style="background-color: #aaccff;"  class="button button-royal button-circle button-giant"><i class="fa fa-mars"></i></button>
+					
+					<button onclick="location.href='../index.html'" type="button" href="../index.html" style="background-color: #aaccff;"  class="button button-royal button-circle button-giant"><i class="fa fa-reply"></i></button>
+					<button onclick="location.href='../help/help.html'" type="button" style="background-color: #aaccff" class="button button-royal button-circle button-giant"><i class="fa fa-question"></i></button>
+					<button type="button" class="button button-royal button-circle button-giant" style="background-color: #aaccff;"  data-toggle="modal" data-target="#mymodal-data"><i class="fa fa-check"></i></button>
+					<button onclick="location.href='boy.html'" type="button" style="background-color: #aaccff;"  class="button button-royal button-circle button-giant"><i class="fa fa-refresh"></i></button>
+
+				</div>
+			</div>
+		</div>
+		
 		<div id="copy">
 			<p align="center">&copy;同济大学软件学院团学联</p>
 		</div>
