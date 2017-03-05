@@ -2,53 +2,45 @@ $('.container').on('click', function () {
   $('.card').toggleClass('flipped');
 });
 
-
-var number = 1;    //for getting the url
-var Get_Card = 0;   //how many cards have you read in the arrays
 var Information_arrays = new Array();
-var wish_url = 'http://192.168.137.128:8000/wish';
+var wish_url = 'http://192.168.137.130:8000/wish';
+var Showed_Card = 0;   //index in the array
 
 function load(){
     setTimeout( function () {
-        $.get("http://192.168.137.128:8000/wish", function(data,status){
+        $.get(wish_url, function(data,status){
             $("p.back_information").text(data.results[0].introduction);
             $("p.wechat_information").text("微信号：" + data.results[0].wechat);
             $("p.Phone_information").text("手机号： " + data.results[0].phone_number);
-            Information_arrays = data;  //put the information into Information_arrays
+            for (var i = 0; i < data.results.length; i++)
+                Information_arrays.push(data.results[i])
         });
-    }, 5000);
+    }, 3000);
 };
 
-
-
-
-function choose() {
+function choose(){
     var Is_Read = false;
-
-
-
-    //how can i get the information about the showed pages?
-    $.get("http://192.168.137.128:8000/wish" + number, function(data, status){
-        Is_Read = data.accept;
+    $.get(wish_url + '/' + Information_arrays[Showed_Card].id, function(data, status){
+        Is_Read = data.accepted;
     })
     if (Is_Read == true){
-        $.get("http://192.168.137.128:8000/wish", function(data,status){
+        $.get(wish_url, function(data,status){
             $("p.back_information").text(data.results[0].introduction);
             $("p.wechat_information").text("微信号：" + data.results[0].wechat);
             $("p.Phone_information").text("手机号： " + data.results[0].phone_number);
-            Information_arrays.length = 0;  //clear the information
-            Information_arrays = data;  //put the information into Information_arrays
+            Information_arrays.clear();
+            for (var i = 0; i < data.results.length; i++)
+                Information_arrays.push(data.results[i])
         });
     }
     else{
-        //put an information to terminal
         $.ajax({
-            url :wish_url + "/"+ number.toString(),
-            data : {"title": Information_arrays.results[Get_Card].title,
-                "introduction" : Information_arrays.results[Get_Card].introduction,
-                "wechat" : Information_arrays.results[Get_Card].wechat,
-                "phone_number" : Information_arrays.results[Get_Card].phone_number,
-                "accept" : true},
+            url :wish_url + "/"+ Information_arrays[Showed_Card].id,
+            data : {"title": Information_arrays[Showed_Card].title,
+                "introduction" : Information_arrays[Showed_Card].introduction,
+                "wechat" : Information_arrays[Showed_Card].wechat,
+                "phone_number" : Information_arrays[Showed_Card].phone_number,
+                "accepted" : 1},
             type : 'PUT',
             success:function () {
                 alert('hello');
@@ -57,33 +49,36 @@ function choose() {
     }
 }
 
-
-
-
-function next() {
-    //click next to refresh the information
-    $("p.back_information").text(Information_arrays.results[Get_Card].introduction);
-    $("p.wechat_information").text("微信号：" + Information_arrays.results[Get_Card].wechat);
-    $("p.Phone_information").text("手机号： " + Information_arrays.results[Get_Card].phone_number);
-    Get_Card++;
-    if (Get_Card >= 10){
-        $.get("http://192.168.137.128:8000/wish", function(data,status){
-            $("p.back_information").text(data.results[0].introduction);
-            $("p.wechat_information").text("微信号：" + data.results[0].wechat);
-            $("p.Phone_information").text("手机号： " + data.results[0].phone_number);
-            Information_arrays.length = 0;  //clear the information
-            Information_arrays = data;  //put the information into Information_arrays
-        });
+function next(){
+    if(Showed_Card < Information_arrays.length - 1){
+        Showed_Card++;
+        $("p.back_information").text(Information_arrays[Showed_Card].introduction);
+        $("p.wechat_information").text("微信号：" + Information_arrays[Showed_Card].wechat);
+        $("p.Phone_information").text("手机号： " + Information_arrays[Showed_Card].phone_number);
+        if (Showed_Card % 10 == 5){
+            try{
+                $.get(wish_url, function(data,status){
+                    for (var i = 0; i < data.results.length; i++)
+                        Information_arrays.push(data.results[i])
+                });
+            }catch (e){}
+        }
     }
-
+    else{
+        $("p.back_information").text("木有心愿了哦！");
+        $("p.wechat_information").text("presented by");
+        $("p.Phone_information").text("软件学院团学联");
+    }
 }
 
-
-
-function confirm() {
-   alert("获得卡片成功！请及时联系女生并帮助她完成心愿！");
+function front(){
+    if (Showed_Card >= 1){
+        Showed_Card--;
+        $("p.back_information").text(Information_arrays[Showed_Card].introduction);
+        $("p.wechat_information").text("微信号：" + Information_arrays[Showed_Card].wechat);
+        $("p.Phone_information").text("手机号： " + Information_arrays[Showed_Card].phone_number);
+    }
 }
-
 
 function submit(){
     var wechat = document.getElementById("input_wechat").value;
@@ -94,6 +89,6 @@ function submit(){
                                 'introduction' : introduction,
                                 'phone_number' : phone_number,
                                 'wechat' : wechat,
-                                'accept' : false};
+                                'accepted' : 0};
     $.post(wish_url, submit_information, alert("Successful!"));
 }
