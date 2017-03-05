@@ -1,9 +1,7 @@
 $('.container').on('click', function () {
   $('.card').toggleClass('flipped');
 });
-$('.container').on('click', function () {
-    $('.card').toggleClass('flipped');
-});
+
 
 var Information_arrays = new Array();
 var wish_url = 'http://192.168.137.130:8000/wish';
