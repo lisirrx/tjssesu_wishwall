@@ -5,21 +5,30 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>女生页面</title>
-
-		<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		
+		<link rel="stylesheet" href="../css/font-awesome.css" />
+		<link rel="stylesheet" href="../css/font-awesome.min.css" />
+		
 
 		<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-		<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="http://www.bootcss.com/p/buttons/css/buttons.css" />
+		<style>
+			body {
+				background-color: #ffaaff;
+			}
+		</style>
 	</head>
 
 	<body>
 		<div id="jello1">
-			<div style=" margin: 20px;" >
-				<div  style=" margin-bottom: 20px; border-bottom:1px solid darkgrey">
+			<div style=" margin: 20px;">
+				<div style=" margin-bottom: 20px; border-bottom:1px solid darkgrey">
 
-					<h1><img id="girlLogo" src="../image/btnGirl.png"> 许愿墙</h1>
+					<h1><button style="background-color: #ffaaff;"  class="button button-royal button-circle button-giant"><i class="fa fa-venus"></i></button> 许愿墙</h1>
 					<p>你的心愿，我的心事</p>
 				</div>
 
@@ -83,9 +92,9 @@
 
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-primary">Submit</button>
-							<a class="btn btn-primary" href="../index.html" role="button">Return</a>
-
+							<button onclick="location.href='../index.html'" type="button" style="background-color: #ffaaff" class="button button-royal button-circle button-giant"><i class="fa fa-reply"></i></button>
+							<button onclick="location.href='../help/help.html'" type="button" style="background-color: #ffaaff" class="button button-royal button-circle button-giant"><i class="fa fa-question"></i></button>							
+							<button type="submit" style="background-color: #ffaaff" class="button button-royal button-circle button-giant"><i class="fa fa-check"></i></button>
 						</div>
 					</div>
 				</form>
