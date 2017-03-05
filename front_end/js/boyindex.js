@@ -1,13 +1,11 @@
 $('.container').on('click', function () {
   $('.card').toggleClass('flipped');
 });
-$('.container').on('click', function () {
-    $('.card').toggleClass('flipped');
-});
 
 var Information_arrays = new Array();
 var wish_url = 'http://192.168.137.130:8000/wish';
 var Showed_Card = 0;   //index in the array
+var Temp = '';
 
 function load(){
     setTimeout( function () {
@@ -17,6 +15,7 @@ function load(){
             $("p.Phone_information").text("手机号： " + data.results[0].phone_number);
             for (var i = 0; i < data.results.length; i++)
                 Information_arrays.push(data.results[i])
+            Temp = data['next'];
         });
     }, 3000);
 };
@@ -58,19 +57,15 @@ function next(){
         $("p.back_information").text(Information_arrays[Showed_Card].introduction);
         $("p.wechat_information").text("微信号：" + Information_arrays[Showed_Card].wechat);
         $("p.Phone_information").text("手机号： " + Information_arrays[Showed_Card].phone_number);
-        if (Showed_Card % 10 == 5){
+        if (Showed_Card % 10 == 5 && Temp != null){
             try{
-                $.get(wish_url, function(data,status){
+                $.get(Temp , function(data,status){
                     for (var i = 0; i < data.results.length; i++)
-                        Information_arrays.push(data.results[i])
+                        Information_arrays.push(data.results[i]);
+                    Temp = data['next'];
                 });
             }catch (e){}
         }
-    }
-    else{
-        $("p.back_information").text("木有心愿了哦！");
-        $("p.wechat_information").text("presented by");
-        $("p.Phone_information").text("软件学院团学联");
     }
 }
 
@@ -83,15 +78,17 @@ function front(){
     }
 }
 
-function submit(){
-    var wechat = document.getElementById("input_wechat").value;
-    var phone_number = document.getElementById("input_phone_number").value;
-    var title = document.getElementById("input_title").value;
-    var introduction = document.getElementById("input_introduction").value;
-    var submit_information = {'title' : title,
-        'introduction' : introduction,
-        'phone_number' : phone_number,
-        'wechat' : wechat,
-        'accepted' : 0};
-    $.post(wish_url, submit_information, alert("Successful!"));
+function Pop() {
+    if (Information_arrays.length > 1){
+        Information_arrays.splice(Showed_Card, 1);
+        Showed_Card = 0;
+        $("p.back_information").text(Information_arrays[Showed_Card].introduction);
+        $("p.wechat_information").text("微信号：" + Information_arrays[Showed_Card].wechat);
+        $("p.Phone_information").text("手机号： " + Information_arrays[Showed_Card].phone_number);
+    }
+    else{
+        $("p.back_information").text("请点击下一张卡片");
+        $("p.wechat_information").text("presented by");
+        $("p.Phone_information").text("tjssesu");
+    }
 }
