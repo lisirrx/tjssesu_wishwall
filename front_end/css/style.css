@@ -1,0 +1,70 @@
+body{
+
+	font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+
+p{
+	color: #3f3f3f;
+}
+
+
+#date{
+	position: relative;
+	top:70px;
+	width: 25%;
+	max-width: 150px;
+}
+
+#balloon{
+	width: 40%;
+	max-width: 200px;
+	
+}
+
+#copy{
+	position: relative;
+	top:85px;
+	
+}
+
+
+#girlLogo{
+	width: 55px;
+}
+
+.textarea{
+	width: 90%;
+	max-width: 500px;
+	max-height: 500px;
+	position: relative;
+	right:13px;
+}
+
+#jello{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 800px;
+}
+
+#jello1{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	max-width: 600px;
+	background-color: white;
+	padding: 10px;
+	perspective: 10px;
+	-webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  cursor: pointer;
+	border-radius: 20px;
+
+}
+
+

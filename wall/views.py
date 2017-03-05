@@ -18,9 +18,13 @@ class WishListView(ListCreateAPIView):
     pagination_class = ResultsSetPagination
 
 
+
+
 class WishDetailView(RetrieveUpdateAPIView):
     serializer_class = WishSerializer
     queryset = Wish.objects.all()
     lookup_field = 'id'
+
+
 
 

@@ -5,6 +5,6 @@ class Wish(models.Model):
     introduction = models.TextField(max_length=100)
     phone_number = models.TextField(max_length=11)
     wechat = models.TextField(max_length=30)
-    accpted = models.BooleanField(default=False)
+    accepted = models.IntegerField(default=0)
 
 
