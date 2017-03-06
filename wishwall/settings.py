@@ -128,8 +128,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
+        'rest_framework.permissions.SessionAuthentication'
     ],
 }
-
-REST_SESSION_LOGIN = False
