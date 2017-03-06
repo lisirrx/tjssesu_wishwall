@@ -24,14 +24,14 @@ body {
   align-items: center;
 }
 .container {
-  width: 70%;
-  height: 40%;
+  width: 100%;
+  height: 50%;
   max-width: 700px;
   min-width: 380px;
   position: relative;
-  -webkit-perspective: 800px;
-  -ms-perspective: 800px;
-  perspective: 800px;
+  -webkit-perspective: 400px;
+  -ms-perspective: 400px;
+  perspective: 400px;
   border-radius: 4px;
 }
 .card {
@@ -128,6 +128,7 @@ body {
 	padding-right: 10px;
 	border-radius: 10px;
 	background-color: white;
+	
 	color: #3f3f3f;
 	font-size:xx-large;
 	margin: 30px;
