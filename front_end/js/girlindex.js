@@ -1,5 +1,5 @@
 
-var wish_url = 'http://192.168.137.130:8000/wish/';
+var wish_url = '/wish/';
 
 function submit(){
     if(document.getElementById("input_wechat").getAttribute("value")){
