@@ -14,13 +14,13 @@ class ResultsSetPagination(PageNumberPagination):
 
 class WishListView(ListCreateAPIView):
     serializer_class = WishSerializer
-    queryset = Wish.objects.all()
+    queryset = Wish.objects.filter(accepted=0)
     pagination_class = ResultsSetPagination
 
 
 class WishDetailView(RetrieveUpdateAPIView):
     serializer_class = WishSerializer
-    queryset = Wish.objects.all()
+    queryset = Wish.objects.filter(accepted=0)
     lookup_field = 'id'
 
 
