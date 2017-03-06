@@ -83,9 +83,9 @@ dialog window, and content.
  
   border-radius: 20px;  
   /* Internal padding */
-  padding-top: 5px;
-  padding-left: 2px;
-  padding-right: 19px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
   padding-bottom: 10px;
   /* External padding */
   margin-top: 0;
