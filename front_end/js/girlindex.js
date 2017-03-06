@@ -2,7 +2,7 @@
 var wish_url = 'http://192.168.137.130:8000/wish/';
 
 function submit(){
-    if(document.getElementById("input_wechat").value == null){
+    if(document.getElementById("input_wechat").getAttribute("value")){
         alert("请输入微信号！");
         return;
     }
@@ -19,7 +19,7 @@ function submit(){
         return;
     }
     var wechat = document.getElementById("input_wechat").value;
-    var phone_number = document.getElementById("").value;
+    var phone_number = document.getElementById("input_phone_number").value;
     var title = document.getElementById("inputEmail3").value;
     var introduction = document.getElementById("input_introduction").value;
 
