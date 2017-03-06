@@ -39,7 +39,7 @@
 							<div class="form-group" align="center" >
 								
 							
-									<input required="required" style="width: 240px;" type="text" class="form-control" placeholder="Wechat" id = "input_wechat">
+                                <input required="required" style="width: 240px;" type="text" class="form-control" placeholder="Wechat" id = "input_wechat"><div id="wechat_alert" style="opacity : 0">请输入微信号</div>
 							
 							</div>
 						</th>
@@ -50,7 +50,7 @@
 							<div class="form-group" align="center" >
 								
 							
-									<input type="number" required="required" style="width: 240px;" type="text" class="form-control" placeholder="Phone number" id = "input_phone_number">
+									<input type="number" required="required" style="width: 240px;" type="text" class="form-control" placeholder="Phone number" id = "input_phone_number" ><div id="phone_number_alert" style="opacity : 0">请输入手机号</div>
 							
 							</div>
 						</th>
@@ -61,7 +61,7 @@
 							<div class="form-group" align="center"   >
 								
 							
-									<input required="required" style="width: 240px;" type="text" class="form-control" id="inputEmail3" placeholder="Title">
+									<input required="required" style="width: 240px;" type="text" class="form-control" id="inputEmail3" placeholder="Title" ><div id = "title_alert" style="opacity : 0">请输入标题</div>
 							
 							</div>
 						</th>
@@ -72,7 +72,7 @@
 
 						<th>
 							<div class="form form-group" align="center" >
-								<textarea class="form-control" style="width: 240px;" placeholder="Introduction" rows="3" id = "input_introduction"></textarea>
+								<textarea class="form-control" style="width: 240px;" placeholder="Introduction" rows="3" id = "input_introduction"></textarea><div id = "introduction_alert" style="opacity : 0">请输入许愿内容</div>
 								
 							</div>
 
@@ -85,7 +85,7 @@
 							<div class="form-group" align="center">
 								
 									
-										<label><input type="checkbox" required="required"> I have read and agree to the <a href="../help/help.html">          Participation notes.</a></label>
+										<label><input type="checkbox" required="required" id="help_confirm"> I have read and agree to the <a href="../help/help.html">          Participation notes.</a></label><div id = "help_alert" style="opacity: 0">请确认同意协议</div>
 									
 								
 							</div>

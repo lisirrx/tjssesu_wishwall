@@ -1,22 +1,44 @@
-
 var wish_url = '/wish/';
 
 function submit(){
-    if(document.getElementById("input_wechat").getAttribute("value")){
-        alert("请输入微信号！");
-        return;
+
+    if($("#input_wechat").val() == "") {
+        $("#wechat_alert").attr('style', 'opacity : 1');
+        return
+    } else {
+        $("#wechat_alert").attr('style', 'opacity : 0');
+
     }
-    if(document.getElementById("input_phone_number").value == null){
-        alert("请输入手机号！");
+
+    if($("#input_phone_number").val() == ""){
+        $("#phone_number_alert").attr('style', 'opacity : 1');
         return ;
     }
-    if(document.getElementById("inputEmail3").value == null){
-        alert("请输入Email！");
+    else{
+        $("#phone_number_alert").attr('style', 'opacity : 0');
+    }
+
+    if($("#inputEmail3").val() == ""){
+            $("#title_alert").attr('style', 'opacity : 1');
         return;
     }
-    if (document.getElementById("input_introduction").value == null){
-        alert("请输入想要实现的愿望！");
+    else{
+        $("#title_alert").attr('style', 'opacity : 0');
+    }
+
+    if ($("#input_introduction").val() == ""){
+            $("#introduction_alert").attr('style', 'opacity : 1');
         return;
+    }
+    else{
+        $("#introduction_alert").attr('style', 'opacity : 0');
+    }
+    if ($("input[type='checkbox']").is(':checked') == false){
+        $("#help_alert").attr('style', 'opacity : 1');
+        return;
+    }
+    else{
+        $("#help_alert").attr('style', 'opacity : 0');
     }
     var wechat = document.getElementById("input_wechat").value;
     var phone_number = document.getElementById("input_phone_number").value;
@@ -28,6 +50,5 @@ function submit(){
         'phone_number' : phone_number,
         'wechat' : wechat,
         'accepted' : 0};
-    $.post(wish_url, submit_information, alert("Successful!"));
-
+    $.post(wish_url, submit_information);
 }
