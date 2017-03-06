@@ -3,7 +3,7 @@ $('.container').on('click', function () {
 });
 
 var Information_arrays = new Array();
-var wish_url = '/wish';
+var wish_url = 'http://192.168.137.130:8000/wish';
 var Showed_Card = 0;   //index in the array
 var Temp = '';
 
