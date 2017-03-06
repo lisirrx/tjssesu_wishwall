@@ -3,6 +3,7 @@ body {
   height: 100%;
   margin: 0;
 }
+
 body {
   background: #aaccff;
   display: -webkit-box;
@@ -69,13 +70,16 @@ body {
   -o-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   color: #3f3f3f;
+  font-size: xx-large;
+  
 }
 .card .back {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  
 }
 .card.flipped {
   -webkit-transform: rotateY(180deg);
@@ -103,4 +107,37 @@ body {
   cursor: pointer;
 }
 
+.Absolute-Center {
+  width: 60%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  
+  top: 0; left: 0; bottom: 0; right: 0;
+}
 
+#copyright{
+	position: relative;
+	top:85px;
+	font-size: xx-large;
+	
+}
+
+.head{
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 10px;
+	background-color: white;
+	color: #3f3f3f;
+	font-size:xx-large;
+	margin: 30px;
+		
+	-webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  cursor: pointer;

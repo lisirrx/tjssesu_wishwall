@@ -15,11 +15,19 @@
 		<link rel="stylesheet" href="../css/font-awesome.css" />
 		<link rel="stylesheet" href="../css/font-awesome.min.css" />
 		<link rel="stylesheet" href="http://www.bootcss.com/p/buttons/css/buttons.css" />
-
         <script src="../js/boyindex.js"></script>
-    </head>
+
+	</head>
 
 	<body onload="load()">
+
+		<header>
+			<div class="head">
+
+			<h1 class="tip"><button onclick="location.href='../index.html'" type="button" style=" margin:10px;background-color: #aaccff" class=" button button-royal button-circle button-giant"><i class="fa fa-home"></i></button>Click card to flip</h1>
+			</div>
+		</header>
+
 		<div class="container">
 			<div class="card">
 				<div class="front">
@@ -35,47 +43,36 @@
 		<script src="../js/boyindex.js"></script>
 
 
-		<div align="center" class="modal" id="mymodal-data" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div align="center"  class="Absolute-Center  modal " id="mymodal-data" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" onclick="Pop()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-						<h4 class="modal-title">确认联系方式</h4>
+						<h4 style="font-size: x-large;" class="modal-title">确认联系方式</h4>
 					</div>
-					<div class="modal-body">
+					<div class="modal-body" style="font-size: x-large;">
 						<p class="wechat_information">Wechat：lkf32487302</p>
 						<p class="Phone_information">Phone number: 12839383928</p>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-						<button type="button" class="btn btn-primary">确认</button>
+					<div align="center">
+						<button style="margin: 10px;" type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button  style="margin: 10px;" type="button" class="btn btn-primary">确认</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="outer" align="center">
-			<div class="form-group">
-				<div>
 
-					<button type="button" style="background-color: #aaccff"
-							class="button button-royal button-circle button-giant" onclick="front()">
-						<i class="fa fa-arrow-left"></i>
-					</button>
-					<button type="button" class="button button-royal button-circle button-giant"
-							style="background-color: #aaccff;"  data-toggle="modal" data-target="#mymodal-data" onclick="choose()">
-						<i class="fa fa-check"></i>
-					</button>
-					<button type="button" style="background-color: #aaccff;"
-							class="button button-royal button-circle button-giant" onclick="next()">
-						<i class="fa fa-arrow-right"></i>
-					</button>
 
-				</div>
-			</div>
+
+					<button type="button" style="margin:10px;background-color: #aaccff" class="button button-royal button-circle button-giant"><i class="fa fa-arrow-left"></i></button>
+					<button type="button" onclick="choose()" class="button button-royal button-circle button-giant" style="margin:10px;background-color: #aaccff;"  data-toggle="modal" data-target="#mymodal-data"><i class="fa fa-check"></i></button>
+					<button type="button" style="margin:10px;background-color: #aaccff;"  class="button button-royal button-circle button-giant"><i class="fa fa-arrow-right"></i></button>
+
 		</div>
 
-		<footer id="copy">
+		<footer id="copyright">
 			<p align="center">&copy;同济大学软件学院团学联</p>
 		</footer>
 	</body>
